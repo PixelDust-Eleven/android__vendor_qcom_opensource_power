@@ -1,5 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
+ifneq ($(TARGET_USES_DEVICE_SPECIFIC_POWERHAL),true)
 ifeq ($(call is-vendor-board-platform,QCOM),true)
 
 include $(CLEAR_VARS)
@@ -140,4 +141,5 @@ LOCAL_VENDOR_MODULE := true
 LOCAL_VINTF_FRAGMENTS := power.xml
 
 include $(BUILD_EXECUTABLE)
+endif
 endif
